@@ -3,6 +3,8 @@ const server = express();
 const routes = require("./routes");
 const path = require("path");
 
+const porta = process.env.PORT || 3000;
+
 // usando template engine
 server.set('view engine', 'ejs')
 
@@ -19,4 +21,4 @@ server.use(express.urlencoded({ extended: true }))
 server.use(routes)
 
 
-server.listen(3000, () => console.log('rodando...'));
+server.listen(porta, () => console.log('rodando...'));
